@@ -1,0 +1,1 @@
+var colorBoxTpl = '<div id="colorBox" class=":color"></div>';

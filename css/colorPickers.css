@@ -1,0 +1,16 @@
+.color-picker {
+    display: block;
+    height: 33.33%;
+    width: 100%;
+    border: none;
+    color: #fff;
+    background-color: #3E454F;
+    margin: 2px 0;
+    font-weight: 700;
+}
+
+.color-picker:focus {
+    outline-color: #3E454F;
+    background-color: #FFF;
+    color: #485C76;
+}
