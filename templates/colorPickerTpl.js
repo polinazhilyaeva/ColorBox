@@ -1,0 +1,1 @@
+var colorPickerTpl = '<button name=":color" class="color-picker :color">:color</button>';

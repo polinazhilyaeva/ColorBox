@@ -1,19 +1,23 @@
 'use strict';
 
-function ColorCountersView () {
-    this.render = function (colorCounters) {
-        var countersContainer = document.getElementById('counters'),
-            counterList = colorCounters.getList(),
-            html = colorCountersTpl,
-            color;
+function ColorCountersView (colorCounters) {
+    this.render = function () {
+        var container = document.getElementById('counters-container'),
+            counterList = colorCounters.getCounterList(),
+            countersBox,
+            html = '',
+            color, counter;
+
+        container.innerHTML = colorCountersTpl;
+        countersBox = document.getElementById('counters')
         
         for (color in counterList) {
-            var counter = counterList[color],
-                toReplace = ':' + color + 'Counter';
+            counter = counterList[color];
 
-            html = html.replace(toReplace, counter);
+            html += colorCounterTpl.replace(':color', color)
+                    .replace(':colorCounter', counter);
         }
 
-        countersContainer.innerHTML = html;
+        countersBox.innerHTML = html;
     };
 }

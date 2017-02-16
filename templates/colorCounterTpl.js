@@ -1,0 +1,1 @@
+var colorCounterTpl = '<p><strong>:color</strong> x <span>:colorCounter</span></p>';

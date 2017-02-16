@@ -13,13 +13,13 @@ div.column {
     justify-content: center;
 }
 
-div#container {
+div#main-container {
     display: flex;
     max-width: 768px;
     margin: 0 auto;
     border: 1px solid #dcdcdc;
 }
 
-div#counters {
+div#counters-container {
     border-left: 1px solid #dcdcdc;
 }

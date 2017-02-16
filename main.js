@@ -1,12 +1,12 @@
 'use strict';
 
 var colorCounters = new ColorCounters(),
-    colorPickersView = new ColorPickersView(),
-    colorBoxView = new ColorBoxView(),
-    colorCountersView = new ColorCountersView();
+    colorPickersView = new ColorPickersView(colorCounters),
+    colorBoxView = new ColorBoxView('default'),
+    colorCountersView = new ColorCountersView(colorCounters);
 
 document.addEventListener('DOMContentLoaded', function () {
-    colorBoxView.render('default');
-    colorCountersView.render(colorCounters);
-    colorPickersView.render(colorCounters, colorBoxView, colorCountersView);
+    colorBoxView.render();
+    colorCountersView.render();
+    colorPickersView.render();
 }, false);

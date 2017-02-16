@@ -8,9 +8,11 @@
         <link rel="stylesheet" href="css/colorPickers.css">
         <link rel="stylesheet" href="css/colorBox.css">
 
-        <script src="ColorCounters.js"></script>    
+        <script src="model/ColorCounters.js"></script>
+        <script src="templates/ColorPickerTpl.js"></script>    
         <script src="templates/ColorPickersTpl.js"></script>
         <script src="templates/colorBoxTpl.js"></script>
+        <script src="templates/ColorCounterTpl.js"></script>
         <script src="templates/ColorCountersTpl.js"></script>
         <script src="view/ColorPickersView.js"></script>
         <script src="view/ColorBoxView.js"></script>
@@ -18,10 +20,10 @@
         <script src="main.js"></script>
     </head>
     <body>
-        <div id="container">
+        <div id="main-container">
             <div id="colors" class="column"></div>
             <div id="target" class="column"></div>
-            <div id="counters" class="column"></div>
+            <div id="counters-container" class="column"></div>
         </div>
     </body>
 </html>
