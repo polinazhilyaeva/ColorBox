@@ -7,18 +7,18 @@ function ColorCounters () {
         green: 0
     };
 
-    this.getCounterList = function () {
-        var list = {},
+    this.toJSON = function () {
+        var json = {},
             color;
 
         for (color in counterList) {
-            list[color] = counterList[color];
+            json[color] = counterList[color];
         }
 
-        return list;
+        return json;
     };
     
-    this.addClick = function (color) {
+    this.increaseCounter = function (color) {
         counterList[color]++;
     };
 }

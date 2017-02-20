@@ -2,14 +2,15 @@
 
 function ColorCountersView (colorCounters) {
     this.render = function () {
-        var container = document.getElementById('counters-container'),
-            counterList = colorCounters.getCounterList(),
-            countersBox,
+        var container = document.querySelector('#counters-container'),
+            counterList = colorCounters.toJSON(),
             html = '',
-            color, counter;
+            countersBox,
+            color, 
+            counter;
 
         container.innerHTML = colorCountersTpl;
-        countersBox = document.getElementById('counters')
+        countersBox = container.querySelector('#counters')
         
         for (color in counterList) {
             counter = counterList[color];

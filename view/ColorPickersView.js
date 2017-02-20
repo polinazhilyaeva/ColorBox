@@ -4,18 +4,22 @@ function ColorPickersView (_colorCounters) {
     var colorCounters = _colorCounters;
 
     this.render = function () {
-        var container = document.getElementById('colors'),
-            colors = colorCounters.getCounterList(),
+        var container = document.querySelector('#colors'),
+            colors = colorCounters.toJSON(),
+            html = '',
             eventListenerColor,
             pickersContainer,
-            button, color;
+            button, 
+            color;
 
         container.innerHTML = colorPickersTpl;
-        pickersContainer = document.getElementById('color-pickers');
+        pickersContainer = container.querySelector('#color-pickers');
 
         for (color in colors) {
-            pickersContainer.innerHTML += colorPickerTpl.replace(/:color/g, color);
+            html += colorPickerTpl.replace(/:color/g, color); 
         }
+
+        pickersContainer.innerHTML = html;
 
         for (color in colors) {
             button = container.querySelector('button[name="' + color + '"]');
@@ -29,7 +33,7 @@ function ColorPickersView (_colorCounters) {
             var colorBoxView = new ColorBoxView(color),
                 colorCountersView = new ColorCountersView(colorCounters);
 
-            colorCounters.addClick(color);
+            colorCounters.increaseCounter(color);
             colorCountersView.render();
             colorBoxView.render();
         };
