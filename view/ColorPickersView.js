@@ -30,12 +30,7 @@ function ColorPickersView (_colorCounters) {
 
     function eventListener (color) {
         return function () {
-            var colorBoxView = new ColorBoxView(color),
-                colorCountersView = new ColorCountersView(colorCounters);
-
             colorCounters.increaseCounter(color);
-            colorCountersView.render();
-            colorBoxView.render();
         };
     }
 }

@@ -1,6 +1,8 @@
 'use strict';
 
-function ColorCountersView (colorCounters) {
+function ColorCountersView (_colorCounters) {
+    var colorCounters = _colorCounters;
+
     this.render = function () {
         var container = document.querySelector('#counters-container'),
             counterList = colorCounters.toJSON(),
